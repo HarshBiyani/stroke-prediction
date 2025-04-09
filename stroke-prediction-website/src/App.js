@@ -36,7 +36,7 @@ function App() {
         <div className="App">
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/stroke-prediction" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/predict" element={<Predict />} />
             <Route path="/dataset" element={<Dataset />} />
