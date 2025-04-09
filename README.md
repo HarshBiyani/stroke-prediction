@@ -17,10 +17,10 @@ Features include:
 
 ## 📓 Notebook
 Check out the complete notebook:  
-[Open in nbviewer](https://nbviewer.org/github/your_username/stroke-prediction/blob/main/stroke_prediction.ipynb)
+[Open in nbviewer](https://nbviewer.org/github/HarshBiyani/stroke-prediction/blob/main/stroke_prediction.ipynb)
 
 ## 🌐 Project Page
-Live demo: [GitHub Pages](https://your-username.github.io/stroke-prediction)
+Live demo: [Site](https://your-username.github.io/stroke-prediction)
 
 ---
 
