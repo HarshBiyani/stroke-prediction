@@ -10,7 +10,7 @@ const Navbar = () => {
           Stroke Prediction
         </Typography>
         <Box>
-          <Button color="inherit" component={Link} to="/">Home</Button>
+          <Button color="inherit" component={Link} to="/stroke-prediction">Home</Button>
           <Button color="inherit" component={Link} to="/about">About</Button>
           <Button color="inherit" component={Link} to="/dataset">Dataset</Button>
           <Button color="inherit" component={Link} to="/predict">Try It</Button>
