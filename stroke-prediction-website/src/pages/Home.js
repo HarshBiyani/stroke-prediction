@@ -16,26 +16,25 @@ const Home = () => {
     { title: 'Model Training', description: 'Training various ML models on the dataset' },
     { title: 'Prediction', description: 'Making accurate stroke predictions' }
   ];
+
   return (
-    <Container maxWidth="lg">
-      <Box sx={{ mt: 8, mb: 4 }}>
+    <Box sx={{ background: 'linear-gradient(to bottom, #f7f9fc, #e3f2fd)', minHeight: '100vh', py: 8 }}>
+      <Container maxWidth="lg">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Typography variant="h2" component="h1" gutterBottom align="center">
+          <Typography variant="h2" align="center" gutterBottom sx={{ fontWeight: 600, color: '#1976d2' }}>
             Stroke Prediction System
           </Typography>
-          <Typography variant="h5" component="h2" gutterBottom align="center" color="text.secondary">
+          <Typography variant="h5" align="center" gutterBottom color="text.secondary">
             Using Machine Learning to Predict Stroke Risk
           </Typography>
         </motion.div>
-      </Box>
 
-      
-
-        <Typography variant="h4" gutterBottom align="center" sx={{ mb: 4 }}>
+        {/* Process Flow */}
+        <Typography variant="h4" gutterBottom align="center" sx={{ mt: 6, mb: 4, color: '#0d47a1' }}>
           Project Process Flow
         </Typography>
 
@@ -43,16 +42,13 @@ const Home = () => {
           {processSteps.map((step, index) => (
             <TimelineItem key={index}>
               <TimelineSeparator>
-                <TimelineDot color="primary" />
+                <TimelineDot variant="filled" color="primary" />
                 {index < processSteps.length - 1 && <TimelineConnector />}
               </TimelineSeparator>
               <TimelineContent>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Paper elevation={3} sx={{ p: 2 }}>
-                    <Typography variant="h6" component="h3" color="primary">
+                <motion.div whileHover={{ scale: 1.04 }} transition={{ duration: 0.3 }}>
+                  <Paper elevation={4} sx={{ p: 3, borderRadius: 3, backgroundColor: '#ffffff' }}>
+                    <Typography variant="h6" color="primary" fontWeight={600}>
                       {step.title}
                     </Typography>
                     <Typography>{step.description}</Typography>
@@ -63,54 +59,52 @@ const Home = () => {
           ))}
         </Timeline>
 
-        <Typography variant="h4" gutterBottom align="center" sx={{ mb: 4 }}>
+        {/* Key Features */}
+        <Typography variant="h4" gutterBottom align="center" sx={{ mb: 4, color: '#0d47a1' }}>
           Key Features
         </Typography>
 
         <Grid container spacing={4}>
-        <Grid item xs={12} md={4}>
-          <motion.div whileHover={{ scale: 1.05 }}>
-            <Paper elevation={3} sx={{ p: 3, height: '100%' }}>
-              <Typography variant="h6" gutterBottom>
-                What is Stroke?
-              </Typography>
-              <Typography>
-                A stroke occurs when blood supply to part of the brain is interrupted or reduced, 
-                preventing brain tissue from getting oxygen and nutrients.
-              </Typography>
-            </Paper>
-          </motion.div>
+          {[
+            {
+              title: 'What is Stroke?',
+              content:
+                'A stroke occurs when blood supply to part of the brain is interrupted or reduced, preventing brain tissue from getting oxygen and nutrients.'
+            },
+            {
+              title: 'Our Approach',
+              content:
+                'We use machine learning algorithms to analyze various health parameters and predict the likelihood of a stroke, helping in early detection and prevention.'
+            },
+            {
+              title: 'Why It Matters',
+              content:
+                'Early prediction and prevention of stroke can save lives. Our system helps identify risk factors and provides valuable insights for healthcare professionals.'
+            }
+          ].map((feature, idx) => (
+            <Grid item xs={12} md={4} key={idx}>
+              <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+                <Paper
+                  elevation={6}
+                  sx={{
+                    p: 3,
+                    height: '100%',
+                    borderRadius: 3,
+                    backgroundColor: '#ffffff',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)'
+                  }}
+                >
+                  <Typography variant="h6" gutterBottom sx={{ color: '#1976d2', fontWeight: 600 }}>
+                    {feature.title}
+                  </Typography>
+                  <Typography>{feature.content}</Typography>
+                </Paper>
+              </motion.div>
+            </Grid>
+          ))}
         </Grid>
-
-        <Grid item xs={12} md={4}>
-          <motion.div whileHover={{ scale: 1.05 }}>
-            <Paper elevation={3} sx={{ p: 3, height: '100%' }}>
-              <Typography variant="h6" gutterBottom>
-                Our Approach
-              </Typography>
-              <Typography>
-                We use machine learning algorithms to analyze various health parameters and predict 
-                the likelihood of a stroke, helping in early detection and prevention.
-              </Typography>
-            </Paper>
-          </motion.div>
-        </Grid>
-
-        <Grid item xs={12} md={4}>
-          <motion.div whileHover={{ scale: 1.05 }}>
-            <Paper elevation={3} sx={{ p: 3, height: '100%' }}>
-              <Typography variant="h6" gutterBottom>
-                Why It Matters
-              </Typography>
-              <Typography>
-                Early prediction and prevention of stroke can save lives. Our system helps identify 
-                risk factors and provides valuable insights for healthcare professionals.
-              </Typography>
-            </Paper>
-          </motion.div>
-        </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </Box>
   );
 };
 
