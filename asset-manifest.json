@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/stroke-prediction/static/css/main.e6694c8b.css",
+    "main.js": "/stroke-prediction/static/js/main.10e05126.js",
+    "static/js/453.86616ed9.chunk.js": "/stroke-prediction/static/js/453.86616ed9.chunk.js",
+    "index.html": "/stroke-prediction/index.html",
+    "main.e6694c8b.css.map": "/stroke-prediction/static/css/main.e6694c8b.css.map",
+    "main.10e05126.js.map": "/stroke-prediction/static/js/main.10e05126.js.map",
+    "453.86616ed9.chunk.js.map": "/stroke-prediction/static/js/453.86616ed9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6694c8b.css",
+    "static/js/main.10e05126.js"
+  ]
+}
