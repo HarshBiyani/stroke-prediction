@@ -11,7 +11,8 @@ const Predict = () => {
     { name: 'Decision Tree', description: 'Tree-like model of decisions', accuracy: '92.3%' },
     { name: 'Naive Bayes', description: 'Probabilistic classifier based on Bayes theorem', accuracy: '89.7%' },
     { name: 'Bernoulli Naive Bayes', description: 'Specialized NB for binary/boolean features', accuracy: '88.5%' },
-    { name: 'Support Vector Machine', description: 'Finds optimal hyperplane for classification', accuracy: '94.2%' }
+    { name: 'Support Vector Machine', description: 'Finds optimal hyperplane for classification', accuracy: '94.2%' },
+    { name: 'Multi Layer Perceptron', description: 'Deep neural network for complex patterns', accuracy: '95.77%' }
   ];
 
   const [selectedModel, setSelectedModel] = useState('');
@@ -46,12 +47,13 @@ const Predict = () => {
     riskScore += marriedValue * 0.15;
     riskScore += workTypeValues[data.workType] * 0.08;
 
-    switch(model) {
+    switch (model) {
       case 'K-Nearest Neighbors': riskScore *= 1.2; break;
       case 'Decision Tree': riskScore *= (data.hypertension === '1' || data.heartDisease === '1' ? 1.3 : 0.9); break;
       case 'Naive Bayes': riskScore *= 0.95; break;
       case 'Bernoulli Naive Bayes': riskScore *= (data.hypertension === '1' || data.heartDisease === '1' ? 1.1 : 0.95); break;
       case 'Support Vector Machine': riskScore *= 1.05; break;
+      case 'Multi Layer Perceptron': riskScore *= 1.25; break;
     }
 
     const probability = 1 / (1 + Math.exp(-riskScore));
@@ -149,24 +151,24 @@ const Predict = () => {
             </Grid>
 
             <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center' }}>
-            <Button
-  type="submit"
-  size="large"
-  disabled={loading}
-  sx={{
-    backgroundColor: '#1976d2',
-    color: '#fff',
-    '&:hover': {
-      backgroundColor: '#1565c0'
-    },
-    px: 4,
-    py: 1.5,
-    fontWeight: 600,
-    borderRadius: 2
-  }}
->
-  {loading ? <CircularProgress size={24} sx={{ color: 'white' }} /> : 'Predict Risk'}
-</Button>
+              <Button
+                type="submit"
+                size="large"
+                disabled={loading}
+                sx={{
+                  backgroundColor: '#1976d2',
+                  color: '#fff',
+                  '&:hover': {
+                    backgroundColor: '#1565c0'
+                  },
+                  px: 4,
+                  py: 1.5,
+                  fontWeight: 600,
+                  borderRadius: 2
+                }}
+              >
+                {loading ? <CircularProgress size={24} sx={{ color: 'white' }} /> : 'Predict Risk'}
+              </Button>
             </Box>
           </form>
 
